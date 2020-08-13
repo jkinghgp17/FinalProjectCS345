@@ -46,13 +46,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Samples\Extra\LightFlicker.cs" />
+     <Compile Include="Assets\Scripts\Environment\AmmoPickup.cs" />
+     <Compile Include="Assets\Scripts\Environment\EndGoal.cs" />
      <Compile Include="Assets\Scripts\Environment\GroundButton.cs" />
      <Compile Include="Assets\Scripts\Environment\JumpPad.cs" />
      <Compile Include="Assets\Scripts\Environment\PlayerReset.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\ImpactController.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\MovementController.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\PlayerWeapon.cs" />
      <Compile Include="Assets\Scripts\Shader\AwesomeToonHelper.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\Weapon\Bullets\Rocket.cs" />
      <Compile Include="Assets\Scripts\Weapon\Bullets\RocketExplosion.cs" />
      <Compile Include="Assets\Scripts\Weapon\Lazer.cs" />
@@ -611,6 +615,10 @@
       <Project>{e75fbcb9-4074-b45f-443d-7a8b6fcc9c4d}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualEffectGraph.Runtime.csproj">
+      <Project>{4f3655f6-640a-5e17-6525-5e76dfb61f66}</Project>
+      <Name>Unity.VisualEffectGraph.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{4e861c9a-a1be-fbee-ca45-cf9c1e24c27e}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
@@ -651,6 +659,10 @@
       <Project>{b44a51ec-499d-29b5-1299-8f5c8e6b6447}</Project>
       <Name>Unity.Postprocessing.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualEffectGraph.Editor.csproj">
+      <Project>{b3679de8-01fd-504d-cd26-ea3b0519d592}</Project>
+      <Name>Unity.VisualEffectGraph.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
       <Project>{32246f46-030e-c537-e9f2-340ea6769ba5}</Project>
       <Name>Unity.ShaderGraph.Editor</Name>
@@ -666,14 +678,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{f09ed546-8867-0dc1-25dd-0d8144eb4b31}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualEffectGraph.Runtime.csproj">
-      <Project>{4f3655f6-640a-5e17-6525-5e76dfb61f66}</Project>
-      <Name>Unity.VisualEffectGraph.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualEffectGraph.Editor.csproj">
-      <Project>{b3679de8-01fd-504d-cd26-ea3b0519d592}</Project>
-      <Name>Unity.VisualEffectGraph.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
