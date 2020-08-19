@@ -15,12 +15,17 @@ public class Lazer : MonoBehaviour
 
     public GameObject continuousShotEffect;
 
+    public FMODUnity.StudioEventEmitter singleShotEmitter;
+    public FMODUnity.StudioEventEmitter countinousShotEmitter;
+
     private float singleShotEffectTime;
     private float continuousShotEffectTime;
 
     public int ammo;
 
     public LayerMask shotLayerMask;
+
+    private bool isShooting = false;
 
     void Start()
     {
@@ -46,12 +51,18 @@ public class Lazer : MonoBehaviour
             playerImpact.AddImpact(-transform.forward, 100);
             singleShotEffectTime = 0.25f;
             singleShotEffect.SetActive(true);
+            singleShotEmitter.Play();
             ammo -= 5;
         } else if (Input.GetButton("Fire2") && ammo >= 1) {
             playerImpact.AddContinousImpact(-transform.forward, 100);
             continuousShotEffectTime = 0.25f;
             continuousShotEffect.SetActive(true);
             ammo -= 1;
+
+            if (!isShooting) {
+                isShooting = true;
+                countinousShotEmitter.Play();
+            }
 
             RaycastHit hit;
             if (Physics.Raycast(muzzlePoint.position, muzzlePoint.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, shotLayerMask)) {
@@ -65,6 +76,8 @@ public class Lazer : MonoBehaviour
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
                 //Debug.Log("Did not Hit");
             }
+        } else {
+            isShooting = false;
         }
     }
 }
