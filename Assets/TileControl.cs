@@ -6,7 +6,7 @@ public class TileControl : MonoBehaviour
 {
 	public int stage;
 	public int lastStage;
-	public float timer = 7.0f;
+	public float timer;
 	private float waitTime = 7.0f;
 	public int lowStage = 0;
 	public int highStage = 4;
@@ -18,6 +18,7 @@ public class TileControl : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		timer = 6.0f;
 		distance = 0;
 		stage = 1;
 		lastStage = 1;
@@ -31,7 +32,6 @@ public class TileControl : MonoBehaviour
 		if (timer >= waitTime)
 		{
 			lastStage = stage;
-			Debug.Log("I need a change");
 			stage = Random.Range(lowStage, highStage);
 			timer = 0.0f;
 			distance = (float)stage - lastStage;
@@ -54,25 +54,21 @@ public class TileControl : MonoBehaviour
 			case 0:
 				TileM = Resources.Load<Material>("MS0");
 				meshRenderer.material = TileM;
-				Debug.Log("case 0");
 				break;
 
 			case 1:
 				TileM = Resources.Load<Material>("MS1");
 				meshRenderer.material = TileM;
-				Debug.Log("case 1");
 				break;
 
 			case 2:
 				TileM = Resources.Load<Material>("MS2");
 				meshRenderer.material = TileM;
-				Debug.Log("case 2");
 				break;
 
 			case 3:
 				TileM = Resources.Load<Material>("MS3");
 				meshRenderer.material = TileM;
-				Debug.Log("case 3");
 				break;
 
 			default:
