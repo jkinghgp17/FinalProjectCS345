@@ -4,61 +4,51 @@ using UnityEngine;
 
 public class enemyControl : MonoBehaviour
 {
-	public Transform sunrise;
-	public Transform sunset;
-	public bool firstHalf;
-
-	// Time to move from sunrise to sunset position, in seconds.
-	public float journeyTime;
-
-	// The time at which the animation started.
-	private float startTime;
-
+	public float shootForce;
+	public Transform muzzlePoint;
+	public GameObject projectile;
+	public float projectileLifetime = 5.0f;
+	public float fireTime = 1f;
+	float timeToFire;
+	public int count;
+	public GameObject player;
+	public Transform cube;
+	public Transform backPoint;
+	public Transform leftPoint;
+	public Transform rightPoint;
 	// Start is called before the first frame update
 	void Start()
-    {
-		
-		firstHalf = true;
-		// Note the time at the start of the animation.
-		startTime = Time.time;
-		journeyTime = 3.0f;
+	{
+		timeToFire = 0f;
+		count = 0;
 	}
 
 	// Update is called once per frame
 	void Update()
-    {
-		// The center of the arc
-		Vector3 center = (sunrise.position + sunset.position) * 0.5F;
-
-		// move the center a bit downwards to make the arc vertical
-		//center -= new Vector3(0, 1, 0);
-
-		// Interpolate over the arc relative to center
-		Vector3 riseRelCenter = sunrise.position - center;
-		Vector3 setRelCenter = sunset.position - center;
-
-		// The fraction of the animation that has happened so far is
-		// equal to the elapsed time divided by the desired time for
-		// the total journey.
-		float fracComplete = (Time.time - startTime) / journeyTime;
-		//riseRelCenter
-
-		if (firstHalf)
+	{
+		player = GameObject.FindWithTag("Player");
+		if (Vector3.Distance(player.transform.position, muzzlePoint.position) < Vector3.Distance(player.transform.position, backPoint.position))
 		{
-			transform.position = Vector3.Slerp(riseRelCenter, setRelCenter, fracComplete);
+			count++;
 		}
-		else
+		if (Vector3.Distance(player.transform.position, muzzlePoint.position) < Vector3.Distance(player.transform.position, leftPoint.position))
 		{
-			transform.position = Vector3.Slerp(setRelCenter, riseRelCenter, fracComplete);
+			count++;
 		}
-		transform.position += center;
-
-		if (fracComplete >= 1.0f)
+		if (Vector3.Distance(player.transform.position, muzzlePoint.position) < Vector3.Distance(player.transform.position, rightPoint.position))
 		{
-			startTime = Time.time;
-			firstHalf = !firstHalf;
+			count++;
 		}
-
-
+		//transform.RotateAround(new Vector3(0f, 10f, 0f), new Vector3(0f, 1f, 0f), 1f);
+		transform.RotateAround(cube.position, cube.up, 20 * Time.deltaTime);
+		timeToFire -= Time.deltaTime;
+		if (count == 3 && timeToFire <= 0f)
+		{
+			GameObject currProjectile = (GameObject)Instantiate(projectile, muzzlePoint.position, muzzlePoint.rotation);
+			currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.up * shootForce);
+			Destroy(currProjectile, projectileLifetime);
+			timeToFire = fireTime;
+		}
+		count = 0;
 	}
 }
