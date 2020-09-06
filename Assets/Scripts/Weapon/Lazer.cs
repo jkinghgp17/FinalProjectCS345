@@ -36,7 +36,7 @@ public class Lazer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ammoCounter.text = "ammo: " + ammo;
+        ammoCounter.text = "Ammo: " + ammo;
         if (singleShotEffectTime <= 0) {
             singleShotEffect.SetActive(false);
         } else {
