@@ -27,6 +27,20 @@ public class Lazer : MonoBehaviour
 
     private bool isShooting = false;
 
+    void shootRay() {
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray,out hit))
+        {
+            if (hit.collider.tag == "Enemy")
+            {
+                Debug.Log("Hit Enemy");
+                hit.collider.GetComponent<EnemyHit>().takeHit();
+            }
+        }
+    }
+
     void Start()
     {
         singleShotEffectTime = 0;
@@ -53,6 +67,7 @@ public class Lazer : MonoBehaviour
             singleShotEffect.SetActive(true);
             singleShotEmitter.Play();
             ammo -= 5;
+            shootRay();
         } else if (Input.GetButton("Fire2") && ammo >= 1) {
             playerImpact.AddContinousImpact(-transform.forward, 100);
             continuousShotEffectTime = 0.25f;
@@ -76,6 +91,7 @@ public class Lazer : MonoBehaviour
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
                 //Debug.Log("Did not Hit");
             }
+            shootRay();
         } else {
             isShooting = false;
         }

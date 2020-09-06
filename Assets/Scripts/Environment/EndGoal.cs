@@ -9,9 +9,11 @@ public class EndGoal : MonoBehaviour
 
     public Timer timer;
 
+    public EnemyCounter enemyCounter;
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player") 
+        if (other.tag == "Player" && enemyCounter.curEnemies == 0) 
         {
             winLoseText.text = "Win";
             timer.timerOn = false;

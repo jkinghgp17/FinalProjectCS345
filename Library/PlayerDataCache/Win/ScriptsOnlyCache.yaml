@@ -11,6 +11,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EndGoal
     - EnemyCounter
+    - EnemyHit
+    - HealthCounter
     - ImpactController
     - Lazer
     - MainMenu
@@ -20,6 +22,7 @@ ScriptsOnlyBuild:
     - TileControl
     - Timer
     - enemyControl
+    - projectileControl
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -111,99 +114,99 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11746}
+      Script: {instanceID: 11726}
     - Class: 114
-      Script: {instanceID: 11898}
+      Script: {instanceID: 11878}
     - Class: 114
-      Script: {instanceID: 11930}
+      Script: {instanceID: 11910}
     - Class: 114
-      Script: {instanceID: 12060}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12064}
+      Script: {instanceID: 12044}
     - Class: 114
-      Script: {instanceID: 12154}
+      Script: {instanceID: 12134}
     - Class: 114
-      Script: {instanceID: 12206}
+      Script: {instanceID: 12186}
     - Class: 114
-      Script: {instanceID: 12388}
+      Script: {instanceID: 12368}
     - Class: 114
-      Script: {instanceID: 12430}
+      Script: {instanceID: 12410}
     - Class: 114
-      Script: {instanceID: 12874}
+      Script: {instanceID: 12854}
     - Class: 114
-      Script: {instanceID: 12888}
+      Script: {instanceID: 12868}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 12930}
     - Class: 114
-      Script: {instanceID: 13122}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13198}
+      Script: {instanceID: 13178}
     - Class: 114
-      Script: {instanceID: 13258}
+      Script: {instanceID: 13238}
     - Class: 114
-      Script: {instanceID: 13394}
+      Script: {instanceID: 13374}
     - Class: 114
-      Script: {instanceID: 13522}
+      Script: {instanceID: 13502}
     - Class: 114
-      Script: {instanceID: 13578}
+      Script: {instanceID: 13558}
     - Class: 114
-      Script: {instanceID: 13648}
+      Script: {instanceID: 13630}
     - Class: 114
-      Script: {instanceID: 13774}
+      Script: {instanceID: 13756}
     - Class: 114
-      Script: {instanceID: 14132}
+      Script: {instanceID: 14114}
     - Class: 114
-      Script: {instanceID: 14160}
+      Script: {instanceID: 14142}
     - Class: 114
-      Script: {instanceID: 14344}
+      Script: {instanceID: 14326}
     - Class: 114
-      Script: {instanceID: 14540}
+      Script: {instanceID: 14522}
     - Class: 114
-      Script: {instanceID: 14624}
+      Script: {instanceID: 14606}
+    - Class: 114
+      Script: {instanceID: 14610}
     - Class: 114
       Script: {instanceID: 14628}
     - Class: 114
-      Script: {instanceID: 14646}
+      Script: {instanceID: 14634}
     - Class: 114
-      Script: {instanceID: 14652}
+      Script: {instanceID: 14788}
     - Class: 114
-      Script: {instanceID: 14806}
+      Script: {instanceID: 14826}
     - Class: 114
-      Script: {instanceID: 14844}
+      Script: {instanceID: 14834}
     - Class: 114
-      Script: {instanceID: 14852}
+      Script: {instanceID: 15074}
     - Class: 114
-      Script: {instanceID: 15092}
+      Script: {instanceID: 15206}
     - Class: 114
       Script: {instanceID: 15224}
     - Class: 114
-      Script: {instanceID: 15242}
+      Script: {instanceID: 15294}
     - Class: 114
-      Script: {instanceID: 15312}
+      Script: {instanceID: 15620}
     - Class: 114
-      Script: {instanceID: 15638}
+      Script: {instanceID: 15676}
     - Class: 114
-      Script: {instanceID: 15694}
+      Script: {instanceID: 15846}
     - Class: 114
-      Script: {instanceID: 15864}
+      Script: {instanceID: 15916}
     - Class: 114
-      Script: {instanceID: 15934}
+      Script: {instanceID: 16180}
     - Class: 114
-      Script: {instanceID: 16198}
+      Script: {instanceID: 16182}
     - Class: 114
-      Script: {instanceID: 16200}
+      Script: {instanceID: 16218}
     - Class: 114
-      Script: {instanceID: 16236}
+      Script: {instanceID: 16248}
     - Class: 114
-      Script: {instanceID: 16266}
+      Script: {instanceID: 16252}
     - Class: 114
-      Script: {instanceID: 16270}
+      Script: {instanceID: 16412}
     - Class: 114
-      Script: {instanceID: 16430}
-    - Class: 114
-      Script: {instanceID: 16436}
+      Script: {instanceID: 16418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -254,41 +257,49 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 12060}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12304}
+      Script: {instanceID: 12134}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12284}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12422}
     - Class: 114
-      Script: {instanceID: 12824}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 13122}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 13176}
+      Script: {instanceID: 12804}
     - Class: 114
-      Script: {instanceID: 13804}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13928}
+      Script: {instanceID: 13156}
     - Class: 114
-      Script: {instanceID: 14026}
+      Script: {instanceID: 13570}
     - Class: 114
-      Script: {instanceID: 14206}
+      Script: {instanceID: 13786}
+    - Class: 114
+      Script: {instanceID: 13910}
+    - Class: 114
+      Script: {instanceID: 14008}
+    - Class: 114
+      Script: {instanceID: 14188}
+    - Class: 114
+      Script: {instanceID: 15224}
     - Class: 114
       Script: {instanceID: 15242}
     - Class: 114
-      Script: {instanceID: 15260}
+      Script: {instanceID: 15664}
     - Class: 114
-      Script: {instanceID: 15682}
+      Script: {instanceID: 16218}
     - Class: 114
-      Script: {instanceID: 16236}
+      Script: {instanceID: 16308}
     - Class: 114
-      Script: {instanceID: 16326}
+      Script: {instanceID: 16336}
     - Class: 114
-      Script: {instanceID: 16354}
+      Script: {instanceID: 24980}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -302,6 +313,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -594,7 +607,7 @@ ScriptsOnlyBuild:
     className: StudioEventEmitter
   - hash:
       serializedVersion: 2
-      Hash: b2b5628f540894d4e2d99b6a94e1c629
+      Hash: b0204429738074bf10e64ed60503f8aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: projectileControl
@@ -844,6 +857,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 85a7cc4eb20ac4507dc45d4e3cfa6746
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthCounter
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -1212,7 +1231,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: feec9273290d4e3977ec98c713f967e5
+      Hash: de5ed31769cfe072af4ffd28a90f1327
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EndGoal
@@ -1600,9 +1619,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
     className: VFXUISliderBinder
+  - hash:
+      serializedVersion: 2
+      Hash: da8ef0959dbb74f32fea28794b939392
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyHit
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/chis.tea/Desktop/Unity Projects Build/FinalProject_3/New Unity
-    Project.exe
+  playerPath: C:/Users/Jake/Documents/FinalProjectCS345/Builds/New Unity Project.exe
