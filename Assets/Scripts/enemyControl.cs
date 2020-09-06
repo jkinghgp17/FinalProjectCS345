@@ -16,11 +16,13 @@ public class enemyControl : MonoBehaviour
 	public Transform backPoint;
 	public Transform leftPoint;
 	public Transform rightPoint;
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		timeToFire = 0f;
 		count = 0;
+		projectileLifetime = 6.0f;
 	}
 
 	// Update is called once per frame
@@ -45,7 +47,7 @@ public class enemyControl : MonoBehaviour
 		if (count == 3 && timeToFire <= 0f)
 		{
 			GameObject currProjectile = (GameObject)Instantiate(projectile, muzzlePoint.position, muzzlePoint.rotation);
-			currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.up * shootForce);
+			//currProjectile.GetComponent<Rigidbody>().AddForce(muzzlePoint.up * shootForce);
 			Destroy(currProjectile, projectileLifetime);
 			timeToFire = fireTime;
 		}
